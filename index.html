@@ -263,7 +263,7 @@ header.scrolled{box-shadow:0 8px 26px rgba(15,27,61,.08)}
 .tabs{
   display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;
   background:#fff;padding:9px;border-radius:18px;box-shadow:var(--shadow);
-  border:1px solid var(--line);max-width:860px;margin-left:auto;margin-right:auto;
+  border:1px solid var(--line);max-width:960px;margin-left:auto;margin-right:auto;
 }
 .tab{
   border:none;background:transparent;font-family:inherit;font-weight:700;font-size:.87rem;
@@ -414,6 +414,67 @@ header.scrolled{box-shadow:0 8px 26px rgba(15,27,61,.08)}
 .ipos-arrow{font-size:1.4rem;color:var(--indigo);font-weight:800;animation:arrowMove 1.6s ease-in-out infinite}
 @keyframes arrowMove{0%,100%{transform:translateX(0);opacity:.6}50%{transform:translateX(6px);opacity:1}}
 
+/* ============ ORIENTASI MASALAH (BARU) ============ */
+.orient-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.orient-card{
+  background:#fff;border-radius:var(--radius);padding:26px 26px 24px;box-shadow:var(--shadow);
+  border:1px solid var(--line);border-top:5px solid var(--indigo);
+  transition:.32s cubic-bezier(.2,.8,.3,1);position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.orient-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.orient-card:nth-child(1){border-top-color:#6366F1}
+.orient-card:nth-child(2){border-top-color:#06B6D4}
+.orient-card:nth-child(3){border-top-color:#F59E0B}
+.orient-card:nth-child(4){border-top-color:#10B981}
+.orient-card::after{
+  content:'';position:absolute;right:-36px;bottom:-36px;width:120px;height:120px;
+  border-radius:50%;background:rgba(99,102,241,.05);pointer-events:none;
+}
+.orient-num{
+  position:absolute;top:-14px;right:-2px;font-size:5.2rem;font-weight:800;
+  color:rgba(99,102,241,.07);line-height:1;pointer-events:none;
+}
+.orient-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;position:relative}
+.orient-ico{
+  width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+  font-size:1.35rem;flex-shrink:0;color:#fff;
+  background:linear-gradient(135deg,var(--indigo),var(--cyan));
+  box-shadow:0 10px 22px rgba(99,102,241,.28);
+  animation:pulseIcon 3.4s ease-in-out infinite;
+}
+.orient-card:nth-child(1) .orient-ico{background:linear-gradient(135deg,#6366F1,#818CF8);box-shadow:0 10px 22px rgba(99,102,241,.30)}
+.orient-card:nth-child(2) .orient-ico{background:linear-gradient(135deg,#06B6D4,#22D3EE);box-shadow:0 10px 22px rgba(6,182,212,.30)}
+.orient-card:nth-child(3) .orient-ico{background:linear-gradient(135deg,#F59E0B,#FBBF24);box-shadow:0 10px 22px rgba(245,158,11,.30)}
+.orient-card:nth-child(4) .orient-ico{background:linear-gradient(135deg,#10B981,#34D399);box-shadow:0 10px 22px rgba(16,185,129,.30)}
+.orient-tag{
+  font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--cyan);display:block;margin-bottom:2px;
+}
+.orient-head h4{color:var(--navy);font-size:1rem;font-weight:800;line-height:1.35;position:relative}
+.orient-scene{
+  background:#FAFBFF;border:1px solid var(--line);border-left:4px solid var(--indigo);
+  border-radius:14px;padding:15px 18px;font-size:.88rem;color:var(--text);
+  margin-bottom:16px;position:relative;flex:1;
+}
+.orient-scene b{color:var(--navy)}
+.orient-ask{
+  font-size:.8rem;font-weight:800;color:var(--indigo);margin-bottom:9px;
+  display:flex;align-items:center;gap:7px;position:relative;
+}
+.mini-list{list-style:none;display:grid;gap:8px;position:relative}
+.mini-list li{
+  font-size:.85rem;color:var(--text);padding-left:24px;position:relative;
+}
+.mini-list li::before{
+  content:'▸';position:absolute;left:6px;color:var(--indigo);font-weight:800;
+}
+.orient-foot{
+  margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
+  font-size:.76rem;color:var(--muted);font-weight:700;position:relative;
+  display:flex;align-items:center;gap:8px;
+}
+
 /* ============ LKPD ============ */
 .lkpd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
 .case-card{
@@ -430,13 +491,6 @@ header.scrolled{box-shadow:0 8px 26px rgba(15,27,61,.08)}
 }
 .case-card h4{color:var(--navy);font-size:1.08rem;font-weight:800;margin-bottom:10px;position:relative}
 .case-card p{color:var(--muted);font-size:.88rem;margin-bottom:14px;position:relative}
-.mini-list{list-style:none;display:grid;gap:8px;position:relative}
-.mini-list li{
-  font-size:.85rem;color:var(--text);padding-left:24px;position:relative;
-}
-.mini-list li::before{
-  content:'▸';position:absolute;left:6px;color:var(--indigo);font-weight:800;
-}
 .step-list{counter-reset:step;list-style:none;display:grid;gap:14px}
 .step-list li{
   counter-increment:step;position:relative;padding:14px 18px 14px 58px;
@@ -639,7 +693,7 @@ footer p{font-size:.85rem;opacity:.68}
   </div>
 </section>
 
-<!-- ================= DIMENSI PROFIL LULUSAN (BARU - DITAMBAHKAN) ================= -->
+<!-- ================= DIMENSI PROFIL LULUSAN ================= -->
 <section class="section" id="dimensi">
   <div class="section-head reveal">
     <span class="section-tag">Profil Lulusan</span>
@@ -711,7 +765,8 @@ footer p{font-size:.85rem;opacity:.68}
   </div>
 
   <div class="tabs reveal" id="materiTabs">
-    <button class="tab active" data-tab="dasar">🧩 Konsep Dasar</button>
+    <button class="tab active" data-tab="orientasi">🔍 Orientasi Masalah</button>
+    <button class="tab" data-tab="dasar">🧩 Konsep Dasar</button>
     <button class="tab" data-tab="input">⌨️ Input</button>
     <button class="tab" data-tab="proses">⚙️ Proses</button>
     <button class="tab" data-tab="output">🖨️ Output</button>
@@ -719,8 +774,124 @@ footer p{font-size:.85rem;opacity:.68}
     <button class="tab" data-tab="pengayaan">🚀 Pengayaan</button>
   </div>
 
+  <!-- ============================================================
+       TAB ORIENTASI MASALAH (BARU)
+       ============================================================ -->
+  <div class="tab-panel active" id="panel-orientasi">
+
+    <div class="panel-box reveal">
+      <h3><span class="em">🔍</span> Orientasi Masalah</h3>
+      <p>Bacalah empat permasalahan nyata berikut ini dengan saksama. Permasalahan-permasalahan ini akan menjadi titik awal pembelajaran sebelum masuk ke materi. Diskusikan bersama temanmu: <b>apa penyebabnya</b>, <b>apa dampaknya</b>, dan <b>bagaimana solusinya</b>?</p>
+      <ul>
+        <li>Setiap kasus mewakili satu kategori hardware: <b>Input</b>, <b>Proses</b>, <b>Output</b>, dan <b>Storage</b>.</li>
+        <li>Catat dugaan awalmu, lalu bandingkan dengan materi pada tab berikutnya.</li>
+        <li>Gunakan hasil diskusi ini untuk mengerjakan LKPD studi kasus.</li>
+      </ul>
+    </div>
+
+    <div class="orient-grid">
+
+      <!-- KARTU 1 -->
+      <article class="orient-card reveal">
+        <span class="orient-num">01</span>
+        <div class="orient-head">
+          <div class="orient-ico">⌨️</div>
+          <div>
+            <span class="orient-tag">Input Device</span>
+            <h4>Keyboard dan Mouse Tidak Terdeteksi</h4>
+          </div>
+        </div>
+        <div class="orient-scene">
+          <b>Orientasi Masalah:</b><br>
+          Saat praktik di lab komputer, CPU sudah menyala dan lampu indikator menyala, tetapi keyboard dan mouse tidak berfungsi. Kursor tidak bergerak dan ketikan tidak muncul di layar.
+        </div>
+        <div class="orient-ask">🧠 Ayo Analisis</div>
+        <ul class="mini-list">
+          <li>Mengapa keyboard dan mouse bisa tidak terdeteksi?</li>
+          <li>Apa dampaknya bagi pengguna?</li>
+          <li>Bagaimana langkah pengecekan dan solusinya?</li>
+        </ul>
+        <div class="orient-foot">💡 Petunjuk: periksa koneksi port, driver, dan perangkat itu sendiri.</div>
+      </article>
+
+      <!-- KARTU 2 -->
+      <article class="orient-card reveal">
+        <span class="orient-num">02</span>
+        <div class="orient-head">
+          <div class="orient-ico">⚙️</div>
+          <div>
+            <span class="orient-tag">Process Device</span>
+            <h4>CPU Overheat</h4>
+          </div>
+        </div>
+        <div class="orient-scene">
+          <b>Orientasi Masalah:</b><br>
+          Komputer digunakan untuk menjalankan aplikasi berat, lalu tiba-tiba mati sendiri. Setelah dinyalakan lagi, komputer terasa panas dan kipas berbunyi keras.
+        </div>
+        <div class="orient-ask">🧠 Ayo Analisis</div>
+        <ul class="mini-list">
+          <li>Mengapa CPU dapat mengalami overheat?</li>
+          <li>Apa dampaknya terhadap kinerja dan umur komponen?</li>
+          <li>Bagaimana cara mencegah dan mengatasinya?</li>
+        </ul>
+        <div class="orient-foot">💡 Petunjuk: perhatikan pendingin, debu, dan sirkulasi udara.</div>
+      </article>
+
+      <!-- KARTU 3 -->
+      <article class="orient-card reveal">
+        <span class="orient-num">03</span>
+        <div class="orient-head">
+          <div class="orient-ico">🖨️</div>
+          <div>
+            <span class="orient-tag">Output Device</span>
+            <h4>Monitor Menampilkan “No Signal”</h4>
+          </div>
+        </div>
+        <div class="orient-scene">
+          <b>Orientasi Masalah:</b><br>
+          CPU menyala dan kipas berputar normal, tetapi monitor menampilkan tulisan “No Signal” atau layar blank. Pengguna tidak dapat melihat hasil pekerjaan komputer.
+        </div>
+        <div class="orient-ask">🧠 Ayo Analisis</div>
+        <ul class="mini-list">
+          <li>Apa saja penyebab munculnya pesan “No Signal”?</li>
+          <li>Apa dampaknya bagi pengguna komputer?</li>
+          <li>Bagaimana urutan pengecekan yang tepat?</li>
+        </ul>
+        <div class="orient-foot">💡 Petunjuk: cek kabel display, sumber input, dan kartu grafis.</div>
+      </article>
+
+      <!-- KARTU 4 -->
+      <article class="orient-card reveal">
+        <span class="orient-num">04</span>
+        <div class="orient-head">
+          <div class="orient-ico">💾</div>
+          <div>
+            <span class="orient-tag">Storage Device</span>
+            <h4>Flashdisk Minta Format / Tidak Bisa Dibuka</h4>
+          </div>
+        </div>
+        <div class="orient-scene">
+          <b>Orientasi Masalah:</b><br>
+          Flashdisk dicolok ke komputer, muncul di File Explorer, tetapi saat dibuka malah muncul peringatan “You need to format the disk before you can use it” atau data tidak bisa diakses.
+        </div>
+        <div class="orient-ask">🧠 Ayo Analisis</div>
+        <ul class="mini-list">
+          <li>Mengapa flashdisk meminta format atau data tidak terbaca?</li>
+          <li>Apa dampaknya jika langsung diformat?</li>
+          <li>Bagaimana cara aman menyelamatkan data dan mengatasinya?</li>
+        </ul>
+        <div class="orient-foot">💡 Petunjuk: pertimbangkan file system, korupsi data, dan pencabutan aman.</div>
+      </article>
+
+    </div>
+
+    <div class="note-box reveal" style="max-width:1100px;margin-left:auto;margin-right:auto">
+      📌 <b>Kesimpulan Awal:</b> Kerusakan hardware tidak selalu berarti komponen harus diganti. Banyak masalah muncul karena <b>koneksi longgar</b>, <b>debu</b>, <b>overheat</b>, atau <b>kesalahan perawatan</b>. Dengan memahami penyebab, dampak, dan solusi, kamu dapat melakukan troubleshooting secara tepat dan aman.
+    </div>
+  </div>
+
   <!-- TAB DASAR -->
-  <div class="tab-panel active" id="panel-dasar">
+  <div class="tab-panel" id="panel-dasar">
 
     <!-- ===== ALUR KERJA KOMPUTER (SIKLUS IPOS) ===== -->
     <div class="panel-box reveal">
